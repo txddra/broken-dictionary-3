@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Words</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Word List</h1>
+    <%if(wordsList.length){ wordsList.forEach(element => { %>
+    <p><a href="#"><%= element.word %> </a></p>
+    <% })}else{ %>
+    <h1>No Words Found</h1>
+    <% } %>
+  </body>
+</html>
