@@ -9,7 +9,7 @@
     <%if(wordsList.length){ wordsList.forEach(element => {
     console.log(element.id)%>
     <p>
-      <a href="/api/v1/words/single-word/ <%= element.id %>"
+      <a href="/words/single-word/ <%= element.id %>">
         ><%= element.word %>
       </a>
     </p>
