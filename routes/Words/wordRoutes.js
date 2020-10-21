@@ -6,7 +6,8 @@ const {
   getAddWord,
   addWord,
   updateWord,
-  deleteWord
+  deleteWord,
+  getUpdateWord
 } = require('./controllers/wordController');
 
 //See all words in the browser
