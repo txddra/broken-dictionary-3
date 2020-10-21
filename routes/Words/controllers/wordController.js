@@ -1,4 +1,7 @@
+const { router } = require('../../../app');
 const Word = require('../models/Word');
+
+
 
 module.exports = {
   getAllWords: (res, req) => {
