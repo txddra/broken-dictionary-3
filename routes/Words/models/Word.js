@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const moment = require('moment');
 
 const WordSchema = new mongoose.Schema({
