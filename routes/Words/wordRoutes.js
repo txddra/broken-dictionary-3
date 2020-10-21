@@ -30,4 +30,4 @@ router.put('/update/:wordId', updateWord);
 //Delete Word from DB
 router.delete('/delete/:wordId', deleteWord);
 
-module.exports = route;
+module.exports = router;
