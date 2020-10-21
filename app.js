@@ -11,7 +11,7 @@ const usersRouter = require('./routes/Users/userRoutes');
 const wordRoutes = require('./routes/Words/wordRoutes');
 
 mongoose
-  .connect(env.MONGODB_URI, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
