@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Words = require('./routes/Words/models/Word');
 const wordSeed = require('./wordSeed.json');
+
+
 require('dotenv').config();
 
 const seedFunc = async () => {

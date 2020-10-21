@@ -5,15 +5,14 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/Users/userRoutes');
 const wordRouter = require('./routes/Words/wordRoutes');
 const app = express();
 
-mongoose
-  .connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -21,6 +20,8 @@ mongoose
   })
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.log(`MongoDB Error: ${err}`));
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
