@@ -1,49 +1,32 @@
-const router = require('express').Router();
-const Word = require('./models/Word');
+const router = require('express').Router;
 
-router.get('/get-words', (req, res) => {
-  Word.find()
-    .then((foundWords) => {
-      return res.render('main/index', { wordsList: foundWords });
-      // return res.json({ foundWords });
-    })
-    .catch((err) => res.json({ err }));
-  // return res.send('All Words Shown here');
-});
+const {
+  getAllWords,
+  getSingleWord,
+  getAddWord,
+  addWord,
+  updateWord,
+  deleteWord
+} = require('./controllers/wordController');
 
-router.post('/add-word', (req, res) => {
-  Word.findOne({ word: req.body.word })
-    .then((foundWord) => {
-      if (foundWord) {
-        return res.send('Word Already Exists');
-      } else {
-        if (!req.body.word || !req.body.meaning) {
-          return res.send('All Inputs Must Be Filled');
-        }
+//See all words in the browser
+router.get('/get-words', getAllWords);
+//Post a word to DB
+router.post('/add-word', addWord);
 
-        let newWord = new Word({
-          word: req.body.word,
-          meaning: req.body.meaning
-        });
+//Get the View for Adding a Word
+router.get('/add-word', getAddWord);
 
-        newWord
-          .save()
-          .then(() => {
-            return res.redirect('/words/get-words');
-            // return res.status(200).json({ wordCreated });
-          })
-          .catch((err) => {
-            return res.status(400).json({ message: 'Word Not Created', err });
-          });
-      }
-    })
-    .catch((err) => {
-      return res.status(500).json({ message: 'Server Error', err });
-    });
-});
+//Get View for a single word
+router.get('/single-word/:wordId', getSingleWord);
 
-router.get('/add-word', (req, res) => {
-  return res.render('main/add-word');
-});
+//Get View for updating a word
+router.get('/update/:wordId', getUpdateWord);
 
-module.exports = router;
+//Put Updates into DB
+router.put('/update/:wordId', updateWord);
+
+//Delete Word from DB
+router.delete('/delete/:wordId', deleteWord);
+
+module.exports = route;

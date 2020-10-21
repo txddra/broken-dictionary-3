@@ -6,10 +6,23 @@
   </head>
   <body>
     <h1>Word List</h1>
-    <%if(wordsList.length){ wordsList.forEach(element => { %>
-    <p><a href="#"><%= element.word %> </a></p>
+    <%if(wordsList.length){ wordsList.forEach(element => {
+    console.log(element.id)%>
+    <p>
+      <a href="/api/v1/words/single-word/ <%= element.id %>"
+        ><%= element.word %>
+      </a>
+    </p>
     <% })}else{ %>
     <h1>No Words Found</h1>
     <% } %>
+
+    <button>
+      <a
+        style="color: gray; text-decoration: none"
+        href="/api/v1/words/add-word"
+        >Add A Word</a
+      >
+    </button>
   </body>
 </html>

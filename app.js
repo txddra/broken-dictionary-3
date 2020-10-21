@@ -4,16 +4,14 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-require('dotenv').config();
+const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/Users/userRoutes');
-const wordRouter = require('./routes/Words/wordRoutes');
-
-const app = express();
+const wordRoutes = require('./routes/Words/wordRoutes');
 
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -31,10 +29,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/words', wordRouter);
+app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/words', wordRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
