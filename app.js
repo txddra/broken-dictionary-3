@@ -9,8 +9,8 @@ const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/Users/userRoutes');
-const wordRoutes = require('./routes/Words/wordRoutes');
-const app = express()
+const wordRouter = require('./routes/Words/wordRoutes');
+const app = express();
 
 mongoose
   .connect(process.env.MONGODB_URI, {
