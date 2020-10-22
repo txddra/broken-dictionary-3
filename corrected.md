@@ -11,3 +11,4 @@
 11. fixed format of code in the schema
 12. changed res, req to req, res
 13. added an opening bracket to index.ejs
+14. erased 'api/v1' from app.use
