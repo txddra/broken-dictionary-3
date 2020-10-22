@@ -8,9 +8,9 @@
     <h1>Word List</h1>
     <% console.log(wordsList)%>
     <%if(wordsList.length){ wordsList.forEach(element => {%>
-    { %>
+    
     <p>
-      <a href="/words/single-word/ <%= element.id %>"></a>
+      <a href="/words/single-word/ <%= element.id %>">
         <%= element.word %>
       </a>
     </p>
