@@ -8,7 +8,7 @@ const {
   updateWord,
   deleteWord,
   getUpdateWord
-} = require('./controllers/wordController');
+} = require('./controllers/wordController.js');
 
 //See all words in the browser
 router.get('/get-words', getAllWords);

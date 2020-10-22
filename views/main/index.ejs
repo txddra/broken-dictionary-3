@@ -2,15 +2,16 @@
 <html>
   <head>
     <title>Words</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
   </head>
   <body>
     <h1>Word List</h1>
-    <%if(wordsList.length){ wordsList.forEach(element => {
-    console.log(element.id)%>
+    <% console.log(wordsList)%>
+    <%if(wordsList.length){ wordsList.forEach(element => {%>
+    { %>
     <p>
-      <a href="/words/single-word/ <%= element.id %>">
-        ><%= element.word %>
+      <a href="/words/single-word/ <%= element.id %>"></a>
+        <%= element.word %>
       </a>
     </p>
     <% })}else{ %>
@@ -18,11 +19,8 @@
     <% } %>
 
     <button>
-      <a
-        style="color: gray; text-decoration: none"
-        href="/api/v1/words/add-word"
-        >Add A Word</a
-      >
+      <a style="color: gray; text-decoration: none"
+        href="/api/v1/words/add-word">Add A Word</a>
     </button>
   </body>
 </html>

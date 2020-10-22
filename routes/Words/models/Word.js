@@ -1,5 +1,5 @@
 const moment = require('moment');
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
 const WordSchema = new mongoose.Schema({
   word: { type: String, required: true, lowercase: true, unique: true },

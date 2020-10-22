@@ -1,10 +1,10 @@
-const { router } = require('../../../app');
+const { router } = require('../../../app.js');
 const Word = require('../models/Word');
 
 
 
 module.exports = {
-  getAllWords: (res, req) => {
+  getAllWords: (req, res) => {
     Word.find()
       .then((foundWords) => {
         return res.render('main/index', { wordsList: foundWords });

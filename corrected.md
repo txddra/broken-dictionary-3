@@ -1,10 +1,13 @@
 1. added getUpdateWord
 2. router was misSpelled in updateWord
 3. added a .env file
-4. put the link in the .env file
-5. added 'process' to .env
-6. added 'const app= express()'
-7. const wordRouter was misspelled
-8. installed http-errors
-9. added parenthesis to router
-10. fixed format of code in the schema
+4. added the .config
+5. put the link in the .env file
+6. added 'process' to .env
+7. added 'const app= express()'
+8. const wordRouter was misspelled
+9. installed http-errors
+10. added parenthesis to router
+11. fixed format of code in the schema
+12. changed res, req to req, res
+13. added an opening bracket to index.ejs
